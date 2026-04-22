@@ -1,27 +1,30 @@
 # 💳 Credit Card Customer Churn Prediction with Machine Learning
 
-## 📌 Tổng quan dự án (Project Overview)
-Dự án tập trung vào việc xây dựng hệ thống dự báo rủi ro rời bỏ của khách hàng thẻ tín dụng cho ngân hàng. Việc nhận diện sớm giúp ngân hàng tối ưu hóa chi phí giữ chân khách hàng (tiết kiệm gấp 5-25 lần so với tìm khách hàng mới).
+## 📌 Project Overview
+This project focuses on building a predictive system to identify high-risk customers likely to churn (attrite) from credit card services. Early identification allows retail banks to implement proactive retention strategies, which is **5-25x more cost-effective** than acquiring new customers.
 
-## 🛠 Phương pháp nghiên cứu (Methodology)
-Dự án áp dụng quy trình phân tích dữ liệu chuyên sâu:
-1. **Tiền xử lý:** Làm sạch dữ liệu, xử lý outliers và chuẩn hóa dữ liệu bằng `StandardScaler`.
-2. **Kỹ thuật đặc trưng (Feature Engineering):** Tạo các biến mới như `Avg_Trans_Value` và `Customer_Segment`.
-3. **Phân cụm (K-Means):** Phân loại hành vi khách hàng thành các nhóm (VIP, Ngủ đông, Áp lực nợ).
-4. **Giảm chiều dữ liệu (PCA):** Xử lý hiện tượng đa cộng tuyến, nén 20+ biến xuống 4 thành phần chính (PCs).
-5. **Huấn luyện mô hình:** So sánh và tối ưu hóa **Random Forest** và **Logistic Regression (Lasso)** qua Grid Search CV.
+## 🛠 Methodology
+The project follows a comprehensive data science pipeline to ensure model robustness and business interpretability:
 
-## 📊 Kết quả ấn tượng (Key Results)
-- **Độ chính xác toàn cục:** 95.76%
-- **Chỉ số ROC-AUC:** **0.99** (Khả năng phân loại gần như lý tưởng)
-- **Recall (Nhóm rủi ro):** **79.3%** (Bắt trọn 8/10 khách hàng thực sự có ý định rời bỏ).
-- **Insight quan trọng:** Tần suất giao dịch (`Total_Trans_Ct`) là chỉ báo sớm quan trọng nhất.
+1. **Data Preprocessing:** Handled missing values, treated outliers, and performed feature scaling using `StandardScaler`.
+2. **Feature Engineering:** Developed strategic metrics such as `Avg_Trans_Value` and `Customer_Segment` to capture deep behavioral patterns.
+3. **Clustering (K-Means):** Performed unsupervised learning to group customers into behavioral segments (e.g., VIP, Dormant, High-Debt).
+4. **Dimensionality Reduction (PCA):** Addressed multicollinearity by compressing 20+ variables into 4 core Principal Components (PCs) while retaining key information.
+5. **Model Training & Optimization:** Compared and tuned **Random Forest** and **Lasso-regularized Logistic Regression** models using **Grid Search CV** and **5-fold Cross-Validation**.
 
-## 🚀 Công cụ sử dụng
-- **Ngôn ngữ:** Python (Pandas, NumPy, Scikit-learn)
-- **Trực quan hóa:** Matplotlib, Seaborn
-- **Thuật toán:** Random Forest, PCA, K-Means, Lasso Regularization.
+## 📊 Performance & Key Results
+- **Overall Accuracy:** 95.76%
+- **ROC-AUC Score:** **0.99** (Indicating near-ideal classification power)
+- **Recall (Risk Group):** **79.3%** (Successfully identified ~80% of actual churners)
+- **Critical Business Insight:** Transaction count (`Total_Trans_Ct`) was identified as the most significant early-warning indicator for churn risk.
 
-## 📂 Cấu trúc thư mục
-- `Code/`: Chứa file Jupyter Notebook xử lý chi tiết.
-- `Data/`: Bộ dữ liệu từ Kaggle (Credit Card Customers).
+## 🚀 Tech Stack
+- **Language:** Python
+- **Libraries:** Pandas, NumPy, Scikit-learn
+- **Visualization:** Matplotlib, Seaborn
+- **Techniques:** Ensemble Learning (Random Forest), PCA, K-Means Clustering, L1 (Lasso) Regularization.
+
+## 📂 Repository Structure
+- `Code/`: Contains the Jupyter Notebook with end-to-end analysis and modeling.
+- `Data/`: Reference to the "Credit Card Customers" dataset from Kaggle.
+- `Images/`: Visualizations including Confusion Matrix and ROC Curves.
