@@ -24,7 +24,7 @@ The project follows a comprehensive data science pipeline to ensure model robust
 - **Visualization:** Matplotlib, Seaborn
 - **Techniques:** Ensemble Learning (Random Forest), PCA, K-Means Clustering, L1 (Lasso) Regularization.
 
-## 📂 Repository Structure
+## Repository Structure
 - `Code/`: Contains the Jupyter Notebook with end-to-end analysis and modeling.
 - `Data/`: Reference to the "Credit Card Customers" dataset from Kaggle.
 - `Images/`: Visualizations including Confusion Matrix and ROC Curves.
